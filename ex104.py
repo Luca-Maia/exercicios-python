@@ -1,19 +1,18 @@
 def leiaInt(msg):
-    ok = False
-    valor = 0
-
     while True:
-        n = str(input(msg))
-        if n.isnumeric():
-            valor = int(n)
-            ok = True
+        try:
+            valor = int(input(msg))
+        except:
+            print('ERRO: por favor, digite um número inteiro válido.')
         else:
-            print('ERRO! Digite um número inteiro válido.')
-        if ok:
-            break
-    
-    return valor
+            return valor
 
-# Programa Principal
-n = leiaInt('Digite um número: ')
-print(f'Você acabou de digitar o número {n}')
+
+def leiaFloat(msg):
+    while True:
+        try:
+            valor = float(input(msg))
+        except:
+            print('ERRO: por favor, digite um número inteiro válido.')
+        else:
+            return valor
