@@ -32,16 +32,18 @@ def metade(p, formatar=False):
 
 
 def resumo(p, aumento, reducao):
-    msg = '        RESUMO DO VALOR        '
-    tam = len(msg)
-    print('-' * tam)
-    print(msg)
-    print('-' * tam)
+    largura = 30
+    espaco_valor = 15
+    total = largura + espaco_valor
 
-    print(f'{"Preço analisado:":<15}{moeda(p):>10}')
-    print(f'{"Dobro do preço:":<15}{dobro(p, True):>10}')
-    print(f'{"Metade do preço:":<15}{metade(p, True):>10}')
-    #print(f'{f"{aumento}% de aumento:":<10}{aumentar(p, aumento, True):>5}')
-    #print(f'{f"{reducao}% de redução:":<10}{diminuir(p, reducao, True):>5}')
+    print('-' * total)
+    print('RESUMO DO VALOR'.center(total))
+    print('-' *  total)
 
-    print('-' * tam)
+    print(f'{"Preço analisado:":<{largura}}{moeda(p)}')
+    print(f'{"Dobro do preço:":<{largura}}{dobro(p, True)}')
+    print(f'{"Metade do preço:":<{largura}}{metade(p, True)}')
+    print(f'{f"{aumento}% de aumento:":<{largura}}{aumentar(p, aumento, True)}')
+    print(f'{f"{reducao}% de redução:":<{largura}}{diminuir(p, reducao, True)}')
+
+    print('-' * total)
